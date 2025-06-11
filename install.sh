@@ -4,33 +4,33 @@ set -e
 
 echo "[+] Starting MomLang installation..."
 
-# Require root
+
 if [ "$EUID" -ne 0 ]; then
   echo "Please run as root (e.g. sudo ./install.sh)"
   exit 1
 fi
 
-# Install wget if missing
+
 if ! command -v wget &> /dev/null; then
   echo "[+] Installing wget..."
   apt update
   apt install -y wget
 fi
 
-# Create hidden interpreter directory
+
 MOMLANG_DIR="/var/lib/.syscore_momlang"
 mkdir -p "$MOMLANG_DIR"
 
-# Set permissions to 755 (rwxr-xr-x)
+
 chmod 755 "$MOMLANG_DIR"
 
-# Download interpreter to the hidden dir
+
 echo "[+] Downloading core.py..."
 wget -q -O "$MOMLANG_DIR/core.py" "https://download-pi-ten.vercel.app/files/momlang_interpreter.py"
 
 chmod 755 "$MOMLANG_DIR/core.py"
 
-# Create ml script in /usr/bin/ml with chmod 755
+
 echo "[+] Creating ml launcher script..."
 
 cat << 'EOF' > /usr/bin/ml
