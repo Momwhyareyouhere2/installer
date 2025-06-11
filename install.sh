@@ -76,7 +76,7 @@ EOF
 
 chmod 755 /usr/bin/ml
 
-rm -f /home/install.sh
+rm -f install.sh
 
 echo "[+] Installation complete!"
 echo "[+] Use 'ml run <filename.mom>' to run MomLang programs."
