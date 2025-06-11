@@ -6,7 +6,7 @@ echo "[+] Starting MomLang installation..."
 
 
 if [ "$EUID" -ne 0 ]; then
-  echo "Please run as root (e.g. sudo ./install.sh)"
+  echo "Please run as root (e.g. sudo bash install.sh)"
   exit 1
 fi
 
