@@ -36,10 +36,10 @@ echo "[+] Creating ml launcher script..."
 cat << 'EOF' > /usr/bin/ml
 #!/bin/bash
 
-# Path to the hidden interpreter
+
 INTERPRETER="/var/lib/.syscore_momlang/core.py"
 
-# Self-remove command
+
 if [ "$1" == "self-remove" ]; then
     echo "Removing MomLang installation..."
 
@@ -53,7 +53,7 @@ if [ "$1" == "self-remove" ]; then
     exit 0
 fi
 
-# Run command
+
 if [ "$1" == "run" ]; then
     if [ -z "$2" ]; then
         echo "Usage: ml run <filename.mom>"
@@ -69,7 +69,7 @@ if [ "$1" == "run" ]; then
     exit 0
 fi
 
-# Default help message
+
 echo "Usage: ml run <filename.mom> or ml self-remove"
 exit 1
 EOF
