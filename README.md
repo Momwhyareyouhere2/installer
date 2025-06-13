@@ -6,6 +6,6 @@
 </head>
 <body>
     <p>This is a programming language made by me:)</p>
-    <p>https://momlang.vercel.app</p>
+    <a href="https://www.momlang.vercel.app" target="_blanket" title="Click me !"><h2>MomLang Website</h2></a>
 </body>
 </html>
