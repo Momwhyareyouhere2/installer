@@ -1,4 +1,4 @@
-#!/bin/bash
+
 
 set -e
 
@@ -34,7 +34,7 @@ chmod 755 "$MOMLANG_DIR/core.py"
 echo "[+] Creating ml launcher script..."
 
 cat << 'EOF' > /usr/bin/ml
-#!/bin/bash
+
 
 
 INTERPRETER="/var/lib/.syscore_momlang/core.py"
@@ -43,10 +43,10 @@ INTERPRETER="/var/lib/.syscore_momlang/core.py"
 if [ "$1" == "self-remove" ]; then
     echo "Removing MomLang installation..."
 
-    # Remove hidden directory
+    
     sudo rm -rf "/var/lib/.syscore_momlang"
 
-    # Remove the binary from /usr/bin
+    
     sudo rm -f /usr/bin/ml
 
     echo "MomLang has been removed successfully."
